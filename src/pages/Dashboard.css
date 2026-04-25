@@ -1,0 +1,102 @@
+/* 
+  -----------------------------------------------
+  Dashboard.css
+  Styles for the Host Dashboard page.
+  -----------------------------------------------
+*/
+
+.dashboard-page {
+  padding: 40px 20px;
+  background-color: var(--bg-light);
+  min-height: calc(100vh - 80px);
+}
+
+.dashboard-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.dashboard-container h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.dashboard-container p {
+  color: var(--text-light);
+  margin-bottom: 32px;
+}
+
+.dashboard-card {
+  background-color: var(--white);
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-card h2 {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.form-message {
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.form-message.success {
+  background: #e7f7ed;
+  border: 1px solid #bfe8cb;
+  color: #1f7a3d;
+}
+
+.form-message.error {
+  background: #ffebe8;
+  border: 1px solid #ffcece;
+  color: #c13515;
+}
+
+.add-property-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: var(--text-dark);
+}
+
+.submit-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.submit-btn:hover {
+  background-color: #e51d53;
+}

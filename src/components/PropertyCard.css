@@ -1,0 +1,182 @@
+/* 
+  -----------------------------------------------
+  PropertyCard.css
+  Styles for the individual property display card.
+  -----------------------------------------------
+*/
+
+.property-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  /* Add a tiny hover effect so the user knows it's clickable */
+  transition: transform 0.22s ease, filter 0.22s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-4px);
+  filter: saturate(1.02);
+}
+
+.card-image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  /* Creates a perfect square aspect ratio */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.12);
+}
+
+.card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures image covers the square without distorting */
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  /* Makes white heart visible on bright images */
+}
+
+/* Guest favourite badge styling */
+.guest-favorite-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #ffffff;
+  color: #222222;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 11px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.property-location {
+  font-size: 17px;
+  font-weight: 700;
+  color: #222222;
+  margin: 0;
+}
+
+.property-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 15px;
+  color: #222222;
+}
+
+.property-text-light {
+  color: #5f5f5f;
+  font-size: 15px;
+  margin: 0;
+}
+
+.property-price-container {
+  margin-top: 6px;
+  font-size: 16px;
+}
+
+.price-bold {
+  font-weight: 700;
+  color: #222222;
+}
+
+.price-text {
+  color: #222222;
+}
+
+/* .carousel-controls {
+  Only show these when we hover over the image
+} */
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+  /* Hidden by default */
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+.card-image-container:hover .carousel-btn {
+  opacity: 1;
+  /* Show when hovering the image container */
+}
+
+.carousel-btn:hover {
+  background-color: white;
+}
+
+.prev-btn {
+  left: 8px;
+}
+
+.next-btn {
+  right: 8px;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: background-color 0.2s ease;
+}
+
+.dot.active {
+  background-color: white;
+}

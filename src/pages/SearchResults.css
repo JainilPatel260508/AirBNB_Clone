@@ -1,0 +1,139 @@
+/* 
+  -----------------------------------------------
+  SearchResults.css
+  Styles for the search page with sidebar
+  -----------------------------------------------
+*/
+
+.search-container {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px;
+  gap: 40px;
+}
+
+/* Sidebar Filters */
+.filters-sidebar {
+  width: 300px;
+  flex-shrink: 0; /* Keep it fixed width */
+  position: sticky;
+  top: 100px;
+  height: max-content;
+}
+
+.filters-sidebar h3 {
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+
+.filter-group {
+  margin-bottom: 32px;
+}
+
+.filter-group.border-top {
+  border-top: 1px solid var(--border-color);
+  padding-top: 32px;
+}
+
+.filter-group h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.filter-desc {
+  color: var(--text-light);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.price-inputs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.price-inputs input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--text-light);
+  border-radius: 8px;
+  outline: none;
+}
+
+.search-filter-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--text-light);
+  border-radius: 8px;
+  outline: none;
+}
+
+.counter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.counter-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.counter-buttons button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--text-light);
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.reset-filters-btn {
+  border: 1px solid #dddddd;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.reset-filters-btn:hover {
+  background: #f7f7f7;
+}
+
+/* Results Area */
+.results-list {
+  flex: 1; /* Takes remaining space */
+}
+
+.results-list h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  row-gap: 40px;
+}
+
+/* Mobile responsivesness */
+@media (max-width: 900px) {
+  .search-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .filters-sidebar {
+    width: 100%;
+    position: static;
+  }
+}

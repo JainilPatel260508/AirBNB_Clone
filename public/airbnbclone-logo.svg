@@ -1,0 +1,7 @@
+<svg width="420" height="96" viewBox="0 0 420 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <path d="M47.8 12.6C39.2 12.6 31.7 17.4 27.7 25.7L10.4 61.8C8.8 65.2 8 68.7 8 72.1C8 83.5 17.2 92 28.2 92C34.1 92 39.6 89.5 43.4 85.1L47.8 80L52.2 85.1C56 89.5 61.5 92 67.4 92C78.4 92 87.6 83.5 87.6 72.1C87.6 68.7 86.8 65.2 85.2 61.8L67.9 25.7C63.9 17.4 56.4 12.6 47.8 12.6Z" stroke="#FF385C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M47.8 45.5C41.7 45.5 36.8 50.5 36.8 56.5C36.8 62.6 41.7 67.5 47.8 67.5C53.9 67.5 58.8 62.6 58.8 56.5C58.8 50.5 53.9 45.5 47.8 45.5Z" stroke="#FF385C" stroke-width="7"/>
+  </g>
+  <text x="106" y="64" fill="#FF385C" font-size="56" font-family="Inter, Avenir Next, Helvetica, Arial, sans-serif" font-weight="700" letter-spacing="-1.2">airbnb</text>
+</svg>

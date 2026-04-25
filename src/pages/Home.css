@@ -1,0 +1,127 @@
+/* 
+  -----------------------------------------------
+  Home.css
+  Simple styles for our grid-based home page.
+  -----------------------------------------------
+*/
+
+.home-page {
+  padding: 0 24px;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+/* 
+  Category Bar Styles
+  This makes the buttons sit next to each other in a row
+*/
+.category-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+  margin-bottom: 32px;
+  overflow-x: auto;
+  padding: 14px 16px 12px 16px;
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 22px;
+  box-shadow: 0 6px 22px rgba(15, 23, 42, 0.09);
+}
+
+/* Hide scrollbar for a cleaner look */
+.category-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.category-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #787878;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 10px;
+  cursor: pointer;
+  min-width: 110px;
+  flex: 1;
+  transition: all 0.2s ease;
+}
+
+.category-button:hover {
+  color: #222222;
+  border-bottom: 2px solid #bdbdbd;
+}
+
+/* When a category is clicked, make it black and bold */
+.active-category {
+  color: #222222;
+  border-bottom: 2px solid #222222;
+}
+
+.category-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #656565;
+  margin-bottom: 1px;
+}
+
+.category-name {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.active-category .category-icon {
+  color: #222222;
+}
+
+/* 
+  Properties Grid Styles
+  This automatically creates a grid that fits as many cards as possible
+*/
+.properties-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  row-gap: 40px;
+  column-gap: 28px;
+  margin-bottom: 72px;
+}
+
+/* Message if no properties are found */
+.no-properties-message {
+  text-align: center;
+  margin-top: 100px;
+  color: #717171;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 744px) {
+  .home-page {
+    padding: 0 14px;
+  }
+
+  .category-bar {
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 10px 8px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+  }
+
+  .category-button {
+    min-width: max-content;
+    flex: unset;
+  }
+
+  .category-name {
+    font-size: 14px;
+  }
+}

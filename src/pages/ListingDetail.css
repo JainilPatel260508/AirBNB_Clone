@@ -1,0 +1,767 @@
+/* 
+  -----------------------------------------------
+  ListingDetail.css
+  Styles for the detailed property viewing page, 
+  matching the precise Airbnb desktop UI mock.
+  -----------------------------------------------
+*/
+
+.listing-detail-page {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #222222;
+  font-size: 16px;
+  line-height: 1.43;
+}
+
+/* Secondary sticky nav */
+.secondary-nav-container {
+  border-bottom: 1px solid #ebebeb;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+  padding: 0 40px;
+}
+
+.secondary-nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.secondary-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.secondary-nav a {
+  text-decoration: none;
+  color: #222222;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 24px 0;
+}
+
+.secondary-nav a.active-nav {
+  font-weight: 600;
+}
+
+.secondary-nav-booking {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.nav-price-bold {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222222;
+}
+
+.nav-price-text {
+  font-size: 14px;
+  color: #717171;
+}
+
+.nav-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #222222;
+  margin-top: 2px;
+}
+
+.nav-rating-number {
+  font-weight: 600;
+}
+
+.nav-reviews-count {
+  color: #717171;
+}
+
+.nav-reserve-btn {
+  background-color: #E51D53;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nav-reserve-btn:hover {
+  background-color: #D70466;
+}
+
+.nav-reserve-btn:disabled {
+  background-color: #f1a1b6;
+  cursor: not-allowed;
+}
+
+/* 
+  Core Container Layout
+*/
+.listing-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.content-container {
+  padding-top: 48px; 
+}
+
+/* 
+  Listing Header
+*/
+.listing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Align title and buttons to bottom */
+  margin-bottom: 24px;
+}
+
+.listing-title {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0;
+  color: #222222;
+  letter-spacing: -0.02em; /* Gives it an elite elegant look */
+}
+
+.action-message {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f7f7f7;
+  border: 1px solid #ebebeb;
+  font-size: 14px;
+}
+
+.listing-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #222222;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.action-btn u {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.action-btn:hover {
+  background-color: #F7F7F7;
+}
+
+/* 
+  Photo Gallery Grid (5 images)
+*/
+.photo-gallery {
+  display: flex;
+  gap: 8px;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  align-items: stretch;
+}
+
+.gallery-main-img {
+  flex: 1; /* Left side takes half */
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background-color: #f2f2f2;
+}
+
+.gallery-sub-imgs {
+  flex: 1; /* Right side takes half */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-rows: minmax(0, 1fr);
+  gap: 8px;
+  height: 100%;
+  min-height: 0;
+}
+
+.gallery-sub-imgs > * {
+  min-height: 0;
+  overflow: hidden;
+  background-color: #f2f2f2;
+}
+
+.gallery-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: filter 0.2s ease;
+  cursor: pointer;
+  background-color: #f2f2f2;
+}
+
+.gallery-img:hover {
+  filter: brightness(0.9);
+}
+
+.bottom-right-img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background-color: #f2f2f2;
+}
+
+/* 
+  Subtitle Section
+*/
+.listing-subtitle-section {
+  margin-bottom: 24px;
+}
+
+.subtitle-heading {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #222222;
+}
+
+.subtitle-meta {
+  color: #222222;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Split content logic */
+.listing-content-split {
+  display: flex;
+  justify-content: space-between;
+  gap: 8%; /* Premium spacing between left text and right widget */
+  position: relative;
+}
+
+.listing-info-side {
+  width: 58%; /* matches proportion in screenshot */
+}
+
+.listing-booking-side {
+  width: 32%;
+  min-width: 350px;
+}
+
+/* 
+  Guest Favourite Banner
+  It's a wide border-box placed right at the top
+*/
+.guest-favorite-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin-bottom: 32px;
+}
+
+.gfb-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.laurel-svg {
+  width: 38px;
+  height: 38px;
+  fill: #222222;
+}
+
+.right-laurel {
+  transform: scaleX(-1); /* Mirror it for the right side */
+}
+
+.gfb-title-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.gfb-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.gfb-middle {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  max-width: 200px;
+  line-height: 1.25;
+}
+
+.gfb-divider {
+  width: 1px;
+  height: 45px;
+  background-color: #dddddd;
+}
+
+.gfb-divider-small {
+  width: 1px;
+  height: 25px;
+  background-color: #dddddd;
+}
+
+.gfb-right-stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gfb-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gfb-number {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.gfb-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.gfb-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Host Section */
+.host-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 32px;
+}
+
+.host-avatar-wrapper {
+  position: relative;
+}
+
+.host-avatar-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.superhost-badge-small {
+  position: absolute;
+  bottom: 0;
+  right: -4px;
+  background-color: #E51D53;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+}
+
+.host-text h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.host-text p {
+  color: #717171;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* Features Block */
+.features-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 32px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.feature-icon {
+  stroke-width: 1.5;
+  color: #222222;
+  margin-top: 2px;
+}
+
+.feature-text h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.feature-text p {
+  color: #717171;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Description Block */
+.description-section {
+  padding-bottom: 48px;
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 48px;
+}
+
+.description-section p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 
+  RIGHT SIDEBAR: Booking Widget
+*/
+.listing-booking-side {
+  position: sticky;
+  top: 100px;
+  padding-bottom: 60px;
+}
+
+.booking-promo-banner {
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.gem-icon {
+  color: #D70466; /* Usually ruby red */
+}
+
+.booking-widget {
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  background-color: white;
+  margin-bottom: 24px;
+}
+
+.booking-price-header {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.booking-price-bold {
+  font-size: 24px;
+  font-weight: 600;
+  color: #222222;
+}
+
+.booking-price-text {
+  font-size: 16px;
+  color: #717171;
+}
+
+/* Form inputs styling */
+.booking-inputs-container {
+  border: 1px solid #B0B0B0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.booking-dates {
+  display: flex;
+}
+
+.input-box {
+  padding: 10px 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* for absolute outline */
+}
+
+/* Simulate the active border outline shown in the screenshot for CHECKOUT */
+.input-box-active::after {
+  content: "";
+  position: absolute;
+  top: -1px; left: -1px; right: -1px; bottom: -1px;
+  border: 2px solid #222222;
+  border-radius: 8px; /* Match outer corners if we want, or just square */
+  pointer-events: none;
+  z-index: 2;
+}
+
+.border-right {
+  border-right: 1px solid #B0B0B0;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #B0B0B0;
+}
+
+.input-box label {
+  font-size: 10px;
+  font-weight: 800;
+  margin-bottom: 2px;
+  color: #222222;
+}
+
+.input-box input,
+.input-box select {
+  border: none;
+  font-size: 14px;
+  outline: none;
+  background: none;
+  color: #222222;
+  cursor: pointer;
+  padding: 0;
+}
+
+.input-box input[type="date"] {
+  font-family: inherit;
+}
+
+.input-box select {
+  font-size: 16px;
+  height: 24px;
+}
+
+.free-cancel-banner {
+  background-color: #F7F7F7;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  color: #222222;
+}
+
+.free-cancel-banner strong {
+  font-weight: 600;
+}
+
+.reserve-button {
+  width: 100%;
+  background-color: #E51D53;
+  color: white;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.reserve-button:hover {
+  background-color: #D70466;
+}
+
+.reserve-button:disabled {
+  background-color: #f1a1b6;
+  cursor: not-allowed;
+}
+
+.no-charge-text {
+  text-align: center;
+  font-size: 14px;
+  color: #717171;
+  margin: 0;
+}
+
+/* Report listing */
+.report-listing {
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #717171;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* 
+  REVIEWS SECTION 
+*/
+.reviews-section {
+  margin-top: 32px;
+  padding-top: 40px;
+  border-top: 1px solid #dddddd;
+}
+
+.reviews-main-heading {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 32px 0;
+  color: #222222;
+  letter-spacing: -0.02em;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 40px;
+  column-gap: 8%; /* Elegant horizontal spacing between columns */
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Review Header */
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.review-avatar-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #f7f7f7;
+}
+
+.review-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewer-name {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 0 2px 0;
+  color: #222222;
+}
+
+.reviewer-meta {
+  font-size: 14px;
+  color: #717171;
+  margin: 0;
+}
+
+/* Review Body */
+.review-stars-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #222222;
+  margin-bottom: 8px;
+}
+
+.review-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.review-date-text {
+  font-weight: 500;
+}
+
+.review-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #222222;
+  margin: 0 0 8px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3; /* modern standard */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.show-more-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #222222;
+  cursor: pointer;
+  text-align: left;
+  display: inline-block;
+}
+
+.show-more-btn u {
+  text-underline-offset: 3px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .listing-content-split {
+    flex-direction: column;
+  }
+  .listing-info-side {
+    width: 100%;
+  }
+  .listing-booking-side {
+    width: 100%;
+    position: static;
+  }
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}

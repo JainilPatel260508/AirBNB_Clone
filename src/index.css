@@ -1,0 +1,48 @@
+/* 
+  -----------------------------------------------
+  index.css
+  This file contains global styles for the app.
+  We set up the Airbnb colors and basic font styling.
+  -----------------------------------------------
+*/
+
+:root {
+  --primary-color: #ff385c;
+  --text-dark: #222222;
+  --text-light: #6a6a6a;
+  --bg-light: #f7f7f7;
+  --border-color: #dddddd;
+  --white: #ffffff;
+  --premium-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+/* We reset margins and padding for all elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set basic font styles for the entire body */
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-dark);
+  background: linear-gradient(180deg, #ffffff 0%, #fcfcfd 100%);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Simple button reset */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Simple link reset */
+a {
+  text-decoration: none;
+  color: inherit;
+}
